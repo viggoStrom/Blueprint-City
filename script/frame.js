@@ -1,0 +1,8 @@
+
+const updateFrame = () => {
+
+}
+
+const renderFrame = () => {
+
+}

@@ -5,7 +5,12 @@ class Person extends Particle {
         layers.entity1.push(this);
         
         this.findAJob();
- 
+
+        this.schedule = [
+            ["1500", "work"],
+            ["1800", "home"],
+        ]
+
         // DEBUG ONLY
         this.visible = true;
     }
@@ -21,7 +26,6 @@ class Person extends Particle {
     }
 
     render() {
-        console.log("object");
         ctx.fillStyle = "white";
         ctx.beginPath();
         ctx.arc(this.pos.x, this.pos.y, 5, 0, Math.PI * 2);
@@ -39,7 +43,7 @@ class Person extends Particle {
         }
         
         this.workplace = null;
-    
+        return;
     }
 
     getDestination(schedule, time) {

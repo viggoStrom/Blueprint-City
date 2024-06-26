@@ -7,6 +7,9 @@ class Office extends Building {
 
         this.employeeCount = {current: 0, max: maxEmployeeCount};
         this.employees = [];
+
+        // DEBUG ONLY
+        this.visible = true;
     }
 
     update() {

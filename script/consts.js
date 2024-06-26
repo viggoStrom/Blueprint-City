@@ -20,3 +20,6 @@ const layers = {
 };
 
 const workplaces = [];
+
+let scale = 1;
+let debug = true; // DEBUGGING ONLY make false when deploying

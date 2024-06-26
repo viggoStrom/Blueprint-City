@@ -1,6 +1,6 @@
 
 const updateFrame = () => {
-    // Gets the layers from the layers object in consts.js and updates each object in each layer
+    // Gets the layers from the layers object in consts.js and updates each object in each layer    
     Object.keys(layers).forEach(layer => {
         layers[layer].forEach(object => {
             object.update();
@@ -24,4 +24,15 @@ const renderFrame = () => {
     });
 
     window.requestAnimationFrame(renderFrame);
+}
+
+const debugRender = () => {
+    if (!debug) return;
+    
+    Object.keys(layers).forEach(layer => {
+        layers[layer]
+            .forEach(object => {
+            object.debugDraw();
+        });
+    });
 }

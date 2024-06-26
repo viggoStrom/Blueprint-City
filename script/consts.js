@@ -9,11 +9,12 @@ const canvas = document.getElementById("main-display");
  */
 const ctx = canvas.getContext("2d");
 
+
 const layers = {
-    background1: [],
-    background2: [],
-    entity1: [],
-    entity2: [],
-    foreground: [],
-    ui: []
+    background1: [], // Landscapes, backgrounds, etc.
+    background2: [], // Roads, buildings, etc.
+    entity1: [], // Player, vehicles, etc.
+    entity2: [], // Entities that need to be above entity1
+    foreground: [], // Planes flying in the sky, weather, etc.
+    ui: [], // UI elements 
 };

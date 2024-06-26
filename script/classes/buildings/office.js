@@ -2,6 +2,8 @@
 class Office extends Building {
     constructor(pos, maxEmployeeCount) {
         super(pos);
+        layers.background2.push(this);
+        workplaces.push(this);
 
         this.employeeCount = {current: 0, max: maxEmployeeCount};
         this.employees = [];

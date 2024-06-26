@@ -18,3 +18,5 @@ const layers = {
     foreground: [], // Planes flying in the sky, weather, etc.
     ui: [], // UI elements 
 };
+
+const workplaces = [];

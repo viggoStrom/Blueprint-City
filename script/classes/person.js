@@ -4,12 +4,8 @@ class Person extends Particle {
         super(pos);
         layers.entity1.push(this);
         
-        const availableWorkplaces = workplaces.filter(workplace => workplace.employeeCount.current < workplace.employeeCount.max);
-
-        this.workplace = availableWorkplaces[Math.floor(Math.random() * availableWorkplaces.length)];
-
-        workplace.employ(this);
-        
+        this.findAJob();
+ 
         // DEBUG ONLY
         this.visible = true;
     }
@@ -25,6 +21,7 @@ class Person extends Particle {
     }
 
     render() {
+        console.log("object");
         ctx.fillStyle = "white";
         ctx.beginPath();
         ctx.arc(this.pos.x, this.pos.y, 5, 0, Math.PI * 2);
@@ -32,8 +29,21 @@ class Person extends Particle {
         ctx.closePath();
     }
 
-    setDestination(destination) {
-        this.destination = destination;
+    findAJob() {
+        const availableWorkplaces = workplaces.filter(workplace => workplace.employeeCount.current < workplace.employeeCount.max);
+
+        if (availableWorkplaces.length > 0) {
+            this.workplace = availableWorkplaces[Math.floor(Math.random() * availableWorkplaces.length)];
+            this.workplace.employ(this);
+            return 
+        }
+        
+        this.workplace = null;
+    
+    }
+
+    getDestination(schedule, time) {
+        
     }
 
     calculatePath() {

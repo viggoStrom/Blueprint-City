@@ -19,8 +19,8 @@ const renderFrame = () => {
         layers[layer]
             .filter(object => object.visible)
             .forEach(object => {
-            object.render();
-        });
+                object.render();
+            });
     });
 
     window.requestAnimationFrame(renderFrame);
@@ -28,11 +28,14 @@ const renderFrame = () => {
 
 const debugRender = () => {
     if (!debug) return;
-    
+
     Object.keys(layers).forEach(layer => {
         layers[layer]
+            .filter(object => object.debugRender)
             .forEach(object => {
-            object.debugDraw();
-        });
+                object.debugRender();
+            });
     });
+
+    window.requestAnimationFrame(debugRender);
 }

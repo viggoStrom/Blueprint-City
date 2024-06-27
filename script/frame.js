@@ -1,6 +1,9 @@
 
 const updateFrame = () => {
-    // Gets the layers from the layers object in consts.js and updates each object in each layer    
+    time = (time + 1) % 288;
+
+    // Gets the layers from the layers object in consts.js and updates each object in each layer
+
     Object.keys(layers).forEach(layer => {
         layers[layer].forEach(object => {
             object.update();

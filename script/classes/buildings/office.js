@@ -18,7 +18,6 @@ class Office extends Building {
       this.schedule[i] = 'work';
     }
 
-    console.log(this.schedule);
 
     // DEBUG ONLY
     this.visible = true;

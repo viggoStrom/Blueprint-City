@@ -22,9 +22,9 @@ class Camera extends Particle {
     render() { }
 
     debugRender() {
-        ctx.fillStyle = "rgba(100,100,100,0.5)";
+        ctx.fillStyle = "rgba(255,100,100,0.5)";
         ctx.beginPath();
-        ctx.arc(this.pos.x, this.pos.y, 5, 0, Math.PI * 2);
+        ctx.arc(this.pos.x, this.pos.y, 7, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
     }

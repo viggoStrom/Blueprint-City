@@ -3,12 +3,13 @@
  * @type {HTMLCanvasElement}
  */
 const canvas = document.getElementById("main-display");
-
 /**
  * @type {CanvasRenderingContext2D}
  */
 const ctx = canvas.getContext("2d");
 
+const statTracker = new StatTracker();
+const camera = new Camera();
 
 const layers = {
     background1: [], // Landscapes, backgrounds, etc.
@@ -18,10 +19,12 @@ const layers = {
     foreground: [], // Planes flying in the sky, weather, etc.
     ui: [], // UI elements 
 };
-
-const workplaces = [];
-const homes = [];
+const frameStats = { ups: [], fps: [], dps: [] };
 
 let scale = 1;
 let debug = true; // DEBUGGING ONLY make false when deploying
 let time = 0;
+
+
+const workplaces = [];
+const homes = [];

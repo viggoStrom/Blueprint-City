@@ -1,5 +1,8 @@
 
 const updateFrame = () => {
+    // Stat Trackers frame time tracker
+    
+
     time = (time + 1) % 288;
 
     // Gets the layers from the layers object in consts.js and updates each object in each layer

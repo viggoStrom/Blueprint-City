@@ -8,9 +8,6 @@ const canvas = document.getElementById("main-display");
  */
 const ctx = canvas.getContext("2d");
 
-const statTracker = new StatTracker();
-const camera = new Camera();
-
 const layers = {
     background1: [], // Landscapes, backgrounds, etc.
     background2: [], // Roads, buildings, etc.
@@ -19,7 +16,6 @@ const layers = {
     foreground: [], // Planes flying in the sky, weather, etc.
     ui: [], // UI elements 
 };
-const frameStats = { ups: [], fps: [], dps: [] };
 
 let scale = 1;
 let debug = true; // DEBUGGING ONLY make false when deploying
